@@ -1,0 +1,9 @@
+[Unit]
+Description=OverClock
+After=multi-user.target
+
+[Service]
+ExecStart= /bin/bash -c "echo 7000 > /sys/bus/i2c/drivers/ina3221/1-0040/hwmon/hwmon3/curr1_crit && echo 6500 > /sys/bus/i2c/drivers/ina3221/1-0040/hwmon/hwmon3/curr1_max"
+
+[Install]
+WantedBy=multi-user.target      
